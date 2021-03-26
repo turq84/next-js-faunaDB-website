@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 const Nav = () => {
   return (
