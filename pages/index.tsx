@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import styled from '@emotion/styled';
-// import { server } from '../config';
-// import ArticleList from '../components/ArticleList';
+import { server } from '../config';
+import ArticleList from '../components/ArticleList';
 
 const home = ({ articles }) => {
   const keywords = 'web development, next js';
@@ -14,21 +14,21 @@ const home = ({ articles }) => {
 
       <h3>Articles</h3>
 
-      {/* <ArticleList articles={articles} /> */}
+      <ArticleList articles={articles} />
     </Layout>
   );
 };
 
-// export const getStaticProps = async () => {
-//   const res = await fetch(`${server}/api/articles`);
-//   const articles = await res.json();
+export const getStaticProps = async () => {
+  const res = await fetch(`${server}/api/articles`);
+  const articles = await res.json();
 
-//   return {
-//     props: {
-//       articles,
-//     },
-//   };
-// };
+  return {
+    props: {
+      articles,
+    },
+  };
+};
 
 // export const getStaticProps = async () => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
